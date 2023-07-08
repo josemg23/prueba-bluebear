@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 
 
-Route::group(['middleware' => config('fortify.middleware', ['api'])], function () {
 
-    Route::get('/home', [DigimonController::class, 'dashboard'])->name('Home');
+
+
+Route::group(['middleware' => ['web', 'auth', 'verified']], function () {
+    Route::get('/home', [DigimonController::class, 'dashboard'])->name('home');
 });

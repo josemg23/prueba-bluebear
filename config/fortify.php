@@ -136,7 +136,6 @@ return [
         Features::resetPasswords(),
         Features::registration(),
         Features::emailVerification(),
-        // Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
