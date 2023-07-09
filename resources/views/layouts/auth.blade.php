@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
 
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
     @yield('style')
     <title>Blue Bear</title>
   </head>
@@ -22,7 +22,7 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     
-    <script src="{{ secure_asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('js')
     
   </body>
