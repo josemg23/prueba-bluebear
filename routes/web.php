@@ -19,10 +19,8 @@ Route::get('/', function () {
 });
 
 
-
-
-
-
 Route::group(['middleware' => ['web', 'auth', 'verified']], function () {
     Route::get('/home', [DigimonController::class, 'dashboard'])->name('home');
+    Route::get('/digimons', [DigimonController::class, 'getDigimons'])->name('digimons.list');
+    Route::get('detail-digimons/{id}', [DigimonController::class, 'getDetailDigimon'])->name('digimons.detail.list');
 });

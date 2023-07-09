@@ -20,7 +20,8 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
-        "vue": "^2.6.12",
+        "bootstrap-vue": "^2.23.1",
+        "vue": "^2.7.14",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.14"
     }

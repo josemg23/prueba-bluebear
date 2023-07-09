@@ -4,7 +4,7 @@
 
 
 @section('content')
-
+<digimon-component></digimon-component>
 @endsection
 
 @section('js')
