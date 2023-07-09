@@ -15,4 +15,5 @@ Comandos para levantamiento del Proyecto.
   - npm install 
   - npm run dev o npm run watch  
   - composer install
+  - php artisan migrate
     
