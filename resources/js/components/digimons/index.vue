@@ -2,78 +2,80 @@
 <div>
     <div class="container">
         <div class="block">
-            <h3>Lista de Digimon</h3>
-            <b-table :show-empty="true" :empty-text="'No hay datos disponibles'" :fields="fields" :items="digimons" :per-page="perPage" :current-page="currentPage"  small caption-top responsive bordered Outlined >
-                <template #cell(actions)="row">
-                    <b-button align="center" size="sm" variant="dark" @click="selectItemsContratos(row.item, row.index, $event.target)">
-                        Detalle
-                    </b-button>
-                </template>
-            </b-table>
-            <div class="pagination-table">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="text-left">
-                            <span class="total">Total de registros: {{ totalRows }}</span>
+            <h5>LISTA DE DIGIMONS</h5>
+            <div class="row  text-justify">
+                <b-table :show-empty="true" :empty-text="'No hay datos disponibles'" :fields="fields" :items="digimons" :per-page="perPage" :current-page="currentPage" small caption-top responsive bordered Outlined>
+                    <template #cell(actions)="row">
+                        <b-button align="center" size="sm" variant="dark" @click="selectItemsContratos(row.item, row.index, $event.target)">
+                            Detalle
+                        </b-button>
+                    </template>
+                </b-table>
+                <div class="pagination-table">
+                    <div class="row text-justify">
+                        <div class="col-md-6 col-12">
+                            <div class="text-left">
+                                <span class="total">Total de registros: {{ totalRows }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-12">
-                        <div class="row">
-                            <div class="col-md-5">
-                                <div class="text-right">
-                                    <span class="total">Página: {{ currentPage }}</span>
+                        <div class="col-md-3 col-12">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="text-right">
+                                        <span class="total">Página: {{ currentPage }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-12">
-                        <div class="text-right">
-                            <b-pagination size="sm" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
-                            </b-pagination>
+                        <div class="col-md-3 col-12">
+                            <div class="text-right">
+                                <b-pagination size="sm" :total-rows="totalRows" v-model="currentPage" :per-page="perPage">
+                                </b-pagination>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <b-modal :adaptive="true"  :id="infoModal.id" :title="infoModal.title"  @hide="resetInfoModal"   hide-footer>
-               
-                    <div class="row  text-justify">
-                        <div class="col-md 3" style="text-align: center;text-transform: uppercase;">
-                          <p><b>{{ infoModal.ids }}</b></p>
-                          <br>
-                            <p><b><u>{{ infoModal.name }}</u></b></p>
-                        </div>
-                        <div class="col-md-12" style="text-align: center;">
-                            <b-img :src="infoModal.img" fluid alt="Responsive image"></b-img>
-                        </div>
-                        <div class="col-md-4" style="text-align: center;">
-                            <p><b>Level </b></p>
-                            <div v-for="(value, i) in infoModal.levels" :key="i">
-                                <p style="font-size: small; margin-bottom: 0;">{{ value.level }} </p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 " style="text-align: center;">
-                            <p><b>Attribute </b></p>
-                            <div v-for="(value, i) in infoModal.attributes" :key="i">
-                                <p style="font-size: small;margin-bottom: 0;">{{ value.attribute }} </p>
-                            </div>
-                            <br>
-                        </div>
-                      
-                        <div class="col-md-4" style="text-align: center;">
-                            <p><b>Type</b></p>
-                            <div v-for="(value, i) in infoModal.types" :key="i">
-                                <p style="font-size: small;margin-bottom: 0;">{{ value.type }} </p>
-                            </div>
-                        </div>
-                     
-                        <div class="col-md-12" style="text-align: center;">
-                            <p><b>Fields</b></p>
-                            <div v-for="(value, i) in infoModal.fields" :key="i">
-                                <b-img :src="value.image" fluid alt="Responsive image"></b-img> <br>
-                            </div>
+            <b-modal :adaptive="true" :id="infoModal.id" :title="infoModal.title" @hide="resetInfoModal" hide-footer>
+
+                <div class="row  text-justify">
+                    <div class="col-md 3" style="text-align: center;text-transform: uppercase;">
+                        <p><b>{{ infoModal.ids }}</b></p>
+                        <br>
+                        <p><b><u>{{ infoModal.name }}</u></b></p>
+                    </div>
+                    <div class="col-md-12" style="text-align: center;">
+                        <b-img :src="infoModal.img" fluid alt="Responsive image"></b-img>
+                    </div>
+                    <div class="col-md-4" style="text-align: center;">
+                        <p><b>Level </b></p>
+                        <div v-for="(value, i) in infoModal.levels" :key="i">
+                            <p style="font-size: small; margin-bottom: 0;">{{ value.level }} </p>
                         </div>
                     </div>
-              
+                    <div class="col-md-4 " style="text-align: center;">
+                        <p><b>Attribute </b></p>
+                        <div v-for="(value, i) in infoModal.attributes" :key="i">
+                            <p style="font-size: small;margin-bottom: 0;">{{ value.attribute }} </p>
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="col-md-4" style="text-align: center;">
+                        <p><b>Type</b></p>
+                        <div v-for="(value, i) in infoModal.types" :key="i">
+                            <p style="font-size: small;margin-bottom: 0;">{{ value.type }} </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="text-align: center;">
+                        <p><b>Fields</b></p>
+                        <div v-for="(value, i) in infoModal.fields" :key="i">
+                            <b-img :src="value.image" fluid alt="Responsive image"></b-img> <br>
+                        </div>
+                    </div>
+                </div>
+
             </b-modal>
         </div>
     </div>
@@ -94,7 +96,7 @@ export default {
                 },
                 {
                     key: "name",
-                    label: "Nombre",
+                    label: "NOMBRE",
                     class: "text-center",
                 },
                 {
@@ -109,7 +111,7 @@ export default {
             countlist: 0,
             infoModal: {
                 id: "info-modal",
-                ids:'',
+                ids: '',
                 title: '',
                 name: '',
                 img: '',
