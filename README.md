@@ -9,7 +9,8 @@ Complementos utilizados
 - vuejs 2.x.x
 - Bootstrap 5
 
-  Comandos para levantamiento del Proyecto.
+
+Comandos para levantamiento del Proyecto.
 
   - npm install 
   - npm run dev o npm run watch  
