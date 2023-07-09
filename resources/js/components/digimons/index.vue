@@ -87,7 +87,6 @@ export default {
     data() {
         return {
             digimons: [],
-
             showModal: false,
             fields: [{
                     key: "id",
